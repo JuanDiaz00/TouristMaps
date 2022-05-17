@@ -1,3 +1,8 @@
+<?php
+
+define('CONTROLLER_PATH', '../Controller/');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,10 +46,13 @@
                     <div class="row input-group-newsletter">
                         <div>
                         <div class="col"><input class="form-control" id="email" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
-                        <div class="col"><input class="form-control" id="email" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                        <br>
+                        <div class="col"><input class="form-control" id="email" type="email" placeholder="Enter your password" aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                        <br>
                         </div>
                         
-                        <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
+                        <div class="col-auto"><button action="<?php echo CONTROLLER_PATH; ?>valida_login.php" class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button><div><a style="color:purple ;" href="#"><u>You do not have an account?</u></a></div></div>
+                        
                     </div>
 
                     <div class="invalid-feedback mt-2" data-sb-feedback="email:required">An email is required.</div>
