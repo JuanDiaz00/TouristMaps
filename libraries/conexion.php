@@ -9,10 +9,13 @@ class Conexion
 {
     public static function getConnection()
     {
-        $conector = new mysqli(HOST, USER, PASSWORD, DB);
-        if (mysqli_connect_errno()) {
-            //echo "error conectándose a la BD";
+        echo DB;
+        $conector = new mysqli("localhost", "cristian", "123456", "touristmaps");
+        if ($conector->connect_errno) {
+            echo $conector->connect_error;
         }
         return $conector;
     }
 }
+//print_r(Conexion::getConnection());
+?>

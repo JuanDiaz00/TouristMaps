@@ -34,29 +34,7 @@ define('CONTROLLER_PATH', '../Controller/');
             <div class="container-fluid px-4 px-lg-0">
                 <h1 class="fst-italic lh-1 mb-4">TOURISMAPS</h1>
                 <p class="mb-5">CONECE EL MUNDO, APRENDE DE EL Y DISFRUTA </p>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-
-                <!-- Email address input-->
-
-                <form action="<?php echo CONTROLLER_PATH; ?>valida_login.php" method="POST">
-                    <div class="row input-group-newsletter">
-                        <div>
-                            <div class="col"><input class="form-control" id="email" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
-                            <br>
-                            <div class="col"><input class="form-control" id="password" type="password" placeholder="Enter your password" aria-label="Enter email address..." data-sb-validations="required,email" /></div>
-                            <br>
-                        </div>
-                        <div class="col-auto"><button class="btn btn-primary" id="submitButton" type="submit">Next</button>
-                            <div><a style="color:purple ;" href="#"><u><br> You do not have an account?</u></a></div>
-                            <div><a style="color:purple ;" href="#"><u>forgot password</u></a></div>
-                        </div>
-                        <?php
+                <?php
                         if (isset($_GET["info"])) {
                             if ($_GET["info"] == 1) {
                         ?>
@@ -82,6 +60,19 @@ define('CONTROLLER_PATH', '../Controller/');
                             }
                         }
                         ?>
+                <form action="<?php echo CONTROLLER_PATH; ?>valida_login.php" method="POST">
+                    <div class="row input-group-newsletter">
+                        <div>
+                            <div class="col"><input class="form-control" id="correo" type="email" name="correo" placeholder="Enter email address..."  /></div>
+                            <br>
+                            <div class="col"><input class="form-control" id="password" type="password" name="password" placeholder="Enter your password" /></div>
+                            <br>
+                        </div>
+                        <div class="col-auto"><button class="btn btn-primary" id="submitButton" type="submit">Next</button>
+                            <div><a style="color:purple ;" href="new_user.php"><u><br> You do not have an account?</u></a></div>
+                            <div><a style="color:purple ;" href="#"><u>forgot password</u></a></div>
+                        </div>
+   
                     </div>
                 </form>
             </div>

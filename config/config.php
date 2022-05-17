@@ -1,7 +1,6 @@
 <?php
-const DB = "cantantesDb";
-const USER = "root";
-const PASSWORD = "";
-const URL = "http:// localhost:8082/tourismaps";
+const DB = "touristmaps";
+const USER = "cristian";
+const PASSWORD = "123456";
 const HOST = "localhost";
 ?>
