@@ -12,7 +12,7 @@ define('CONTROLLER_PATH', '../Controller/');
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Coming Soon - Start Bootstrap Theme</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -20,13 +20,13 @@ define('CONTROLLER_PATH', '../Controller/');
     <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
     <!-- Background Video-->
     <video width="60px" height="40px" class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="assets/mp4/bg.mp4" type="video/mp4" />
+        <source src="../assets/mp4/bg.mp4" type="video/mp4" />
     </video>
     <!-- Masthead-->
     <div class="masthead">
@@ -41,40 +41,47 @@ define('CONTROLLER_PATH', '../Controller/');
                 <!-- To make this form functional, sign up at-->
                 <!-- https://startbootstrap.com/solution/contact-forms-->
                 <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <!-- Email address input-->
+
+                <!-- Email address input-->
+
+                <form action="<?php echo CONTROLLER_PATH; ?>valida_login.php" method="POST">
                     <div class="row input-group-newsletter">
                         <div>
-                        <div class="col"><input class="form-control" id="email" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
-                        <br>
-                        <div class="col"><input class="form-control" id="email" type="email" placeholder="Enter your password" aria-label="Enter email address..." data-sb-validations="required,email" /></div>
-                        <br>
+                            <div class="col"><input class="form-control" id="email" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                            <br>
+                            <div class="col"><input class="form-control" id="password" type="password" placeholder="Enter your password" aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                            <br>
                         </div>
-                        
-                        <div class="col-auto"><button action="<?php echo CONTROLLER_PATH; ?>valida_login.php" class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button><div><a style="color:purple ;" href="#"><u>You do not have an account?</u></a></div></div>
-                        
-                    </div>
-
-                    <div class="invalid-feedback mt-2" data-sb-feedback="email:required">An email is required.</div>
-                    <div class="invalid-feedback mt-2" data-sb-feedback="email:email">Email is not valid.</div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center mb-3 mt-2">
-                            <div class="fw-bolder">TouristMaps</div>
-                            ConocCONECE, APRENDE Y VIAJA
-                            <br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        <div class="col-auto"><button class="btn btn-primary" id="submitButton" type="submit">Next</button>
+                            <div><a style="color:purple ;" href="#"><u><br> You do not have an account?</u></a></div>
+                            <div><a style="color:purple ;" href="#"><u>forgot password</u></a></div>
                         </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage">
-                        <div class="text-center text-danger mb-3 mt-2">Error sending message!</div>
+                        <?php
+                        if (isset($_GET["info"])) {
+                            if ($_GET["info"] == 1) {
+                        ?>
+                                <div class="alert alert-danger d-flex alert-dismissible fade show" role="alert">
+                                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:">
+                                        <use xlink:href="#exclamation-triangle-fill" />
+                                    </svg>
+                                    <strong>¡Datos Incorrectos!</strong>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            <?php
+                            }
+                            if ($_GET["info"] == 2) {
+                            ?>
+                                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:">
+                                        <use xlink:href="#info-fill" />
+                                    </svg>
+                                    <strong>¡Cerró Sesión!</strong> Adiós
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                        <?php
+                            }
+                        }
+                        ?>
                     </div>
                 </form>
             </div>
@@ -92,7 +99,7 @@ define('CONTROLLER_PATH', '../Controller/');
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+    <script src="../js/scripts.js"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
