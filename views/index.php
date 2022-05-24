@@ -70,7 +70,7 @@ define('CONTROLLER_PATH', '../Controller/');
                         </div>
                         <div class="col-auto"><button class="btn btn-primary" id="submitButton" type="submit">Next</button>
                             <div><a style="color:purple ;" href="new_user.php"><u><br> You do not have an account?</u></a></div>
-                            <div><a style="color:purple ;" href="#"><u>forgot password</u></a></div>
+                            <div><a style="color:purple ;" href="forgot_password.php"><u>forgot password</u></a></div>
                         </div>
    
                     </div>
