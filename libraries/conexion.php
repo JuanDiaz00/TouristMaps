@@ -10,7 +10,7 @@ class Conexion
     public static function getConnection()
     {
         echo DB;
-        $conector = new mysqli("localhost", "cristian", "123456", "touristmaps");
+        $conector = new mysqli("localhost", "root", "", "touristmaps");
         if ($conector->connect_errno) {
             echo $conector->connect_error;
         }

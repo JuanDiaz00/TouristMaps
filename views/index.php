@@ -11,7 +11,7 @@ define('CONTROLLER_PATH', '../Controller/');
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Coming Soon - Start Bootstrap Theme</title>
+    <title>Touristmaps</title>
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -28,7 +28,7 @@ define('CONTROLLER_PATH', '../Controller/');
     <video width="60px" height="40px" class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
         <source src="../assets/mp4/bg.mp4" type="video/mp4" />
     </video>
-    <!-- Masthead-->
+    <!-- Masthead-->                            
     <div class="masthead">
         <div class="masthead-content text-white">
             <div class="container-fluid px-4 px-lg-0">

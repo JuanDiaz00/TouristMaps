@@ -1,22 +1,35 @@
+<?php
+define('LIBRARIES_PATH', '../libraries/');
+define('CONTROLLER_PATH', '../Controller/');
+define('VIEWS_PATH', '../Views/');
+define('CSS_PATH', '../css/');
+define('JS_PATH', '../js/');
+if (!defined('CONFIG_PATH')) {
+    define('CONFIG_PATH', '../config/');
+}
+
+require_once(CONTROLLER_PATH . "points.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Touristmaps</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
     <link rel="stylesheet" href="../css/custom.css">
+
 </head>
+
 <body>
-    <p>hola</p>
-<div id="map"></div>
 
-
-
-<script>
-    
+    <div id="map"></div>
+    <script>
         var map = L.map('map').
         setView([4.1156735, -72.9301367],
             6);
@@ -34,21 +47,29 @@
         L.control.scale().addTo(map);
 
         var greenIcon = L.icon({
-            iconUrl: '../img/leaf-green.png',
-            shadowUrl: '../img/leaf-shadow.png',
-
+            iconUrl: '../img/point-map.png',
             iconSize: [38, 45], // size of the icon
-            shadowSize: [50, 64], // size of the shadow
             iconAnchor: [22, 44], // point of the icon which will correspond to marker's location
-            shadowAnchor: [4, 62], // the same for the shadow
             popupAnchor: [-3, -43] // point from which the popup should open relative to the iconAnchor
         });
+        
+        
+        var points = getAllPoints();
+        if (points != null) {
+            
 
-        L.marker([4.624335, -74.063644], {
-            icon: greenIcon,
-            alt: 'Bogotá'
-        }).addTo(map).bindPopup('Bogotá es la capital de Colombia');
+            while ($row = mysqli_fetch_assoc(points)) {
+                L.marker([4.707138569022662, -74.17854465705803], {
+                    icon: greenIcon,
+                    alt: 'bogota'
+                }).addTo(map).bindPopup('Bogotá es la capital de Colombia');
+
+        
+            }
+        }
+        
     </script>
 
 </body>
+
 </html>

@@ -14,6 +14,7 @@ define('CONTROLLER_PATH', '../Controller/');
     <title>Coming Soon - Start Bootstrap Theme</title>
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
+    
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
@@ -21,6 +22,7 @@ define('CONTROLLER_PATH', '../Controller/');
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../css/styles.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/custom.css">
 </head>
 
 <body>
@@ -32,6 +34,9 @@ define('CONTROLLER_PATH', '../Controller/');
     <div class="masthead">
         <div class="masthead-content text-white">
             <div class="container-fluid px-4 px-lg-0">
+                
+
+
             </div>
         </div>
 
