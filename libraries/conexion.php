@@ -9,10 +9,10 @@ class Conexion
 {
     public static function getConnection()
     {
-        echo DB;
+       
         $conector = new mysqli("localhost", "root", "", "touristmaps");
         if ($conector->connect_errno) {
-            echo $conector->connect_error;
+            //echo $conector->connect_error;
         }
         return $conector;
     }
