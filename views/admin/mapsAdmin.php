@@ -65,10 +65,9 @@ require_once(CONTROLLER_PATH . "points.php");
                     icon: greenIcon,
                     alt: '<?php echo $row["nombre"]; ?>'
                 }).addTo(map).bindPopup('<img src="<?php echo $row["img"]; ?>" alt="" width="300px" height="300px">'+
-                  '<br><p><?php echo $row["descripcion"]; ?></p>'                      
-                
+                  '<br><p><?php echo $row["descripcion"]; ?></p>'  
+                                      
                 );
-
         <?php
             }
         }
