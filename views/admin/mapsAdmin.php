@@ -22,7 +22,7 @@ require_once(CONTROLLER_PATH . "points.php");
     <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico" />
     <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
-    
+
     <link rel="stylesheet" href="../../css/custom.css">
 </head>
 
@@ -52,7 +52,7 @@ require_once(CONTROLLER_PATH . "points.php");
             iconAnchor: [22, 44], // point of the icon which will correspond to marker's location
             popupAnchor: [-3, -43] // point from which the popup should open relative to the iconAnchor
         });
-     
+
         <?php
 
         $points = getAllPoints();
@@ -64,9 +64,10 @@ require_once(CONTROLLER_PATH . "points.php");
                 L.marker([<?php echo $row["coordenadas"]; ?>], {
                     icon: greenIcon,
                     alt: '<?php echo $row["nombre"]; ?>'
-                }).addTo(map).bindPopup('<img src="<?php echo $row["img"]; ?>" alt="" width="300px" height="300px">'+
-                  '<br><p><?php echo $row["descripcion"]; ?></p>'  
-                                      
+                }).addTo(map).bindPopup('<img src="<?php echo $row["img"]; ?>" alt="" width="300px" height="300px">' +
+                '<h1><?php echo $row["nombre"]; ?></h1>'+
+                    '<br><p><?php echo $row["descripcion"]; ?></p>'
+
                 );
         <?php
             }
@@ -74,8 +75,18 @@ require_once(CONTROLLER_PATH . "points.php");
         ?>
     </script>
 
+    <form method="POST" action="<?php echo CONTROLLER_PATH; ?>points.php">
+        <input class="form-control form-control-lg" name="coordenadas" type="text" placeholder="coordenadas">
+        <input class="form-control" type="text" name="nombre" placeholder="nombre">
+        <input class="form-control form-control-sm" name="img" type="text" placeholder="link imagen">
+        <input class="form-control form-control-sm" name="descripcion" type="text" placeholder="descripcion">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <div class="col-12">
+            <input type="hidden" name="id">
+            <input type="hidden" name="nuevo_punto">
 
-
+        </div>
+    </form>
 </body>
 
 </html>

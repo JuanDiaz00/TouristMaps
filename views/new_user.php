@@ -4,7 +4,7 @@ define('CONTROLLER_PATH', '../Controller/');
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 
 <head>
     <meta charset="utf-8" />
@@ -33,26 +33,32 @@ define('CONTROLLER_PATH', '../Controller/');
 
     <div class="masthead">
         <div class="masthead-content text-white">
-            <div class="container-fluid px-4 px-lg-0">
-                <form action="<?php echo CONTROLLER_PATH; ?>create_user.php" method="POST">
+            <div class="container-fluid px-3 px-lg-0">
+                
+                <form method="POST" action="<?php echo CONTROLLER_PATH; ?>user.php">
                     <div class="row input-group-newsletter">
                         <div>
-                            <h1 class="fst-italic lh-1 mb-4">CREAR USUARIO</h1>
+                            <h1 class="fst-italic lh-1 mb-3">CREAR USUARIO</h1>
                             <div class="col"><input class="form-control" id="nombre" type="text" name="nombre" placeholder="Name.." /></div>                         
-                            <p class="mb-5">Nombre</p>
+                            <p class="mb-3">Nombre</p>
                             <div class="col"><input class="form-control" id="apellido" type="text" name="apellido" placeholder="Last Name.." /></div>                         
-                            <p class="mb-5">Apellido</p>
+                            <p class="mb-3">Apellido</p>
                             <div class="col"><input class="form-control" id="nikname" type="text" name="nikname" placeholder="Nikname.."/></div>
-                            <p class="mb-5">Apodo</p>
+                            <p class="mb-3">Apodo</p>
                             <div class="col"><input class="form-control" id="email" type="email" name="email" placeholder="Email.."/></div>
-                            <p class="mb-5">Email</p>
+                            <p class="mb-3">Email</p>
                             <div class="col"><input class="form-control" id="password" type="password" name="password" placeholder="Password.."/></div>
-                            <p class="mb-5">Contraseña</p>
+                            <p class="mb-3">Contraseña</p>
                             
                             <br>
                         </div>
-                        <div class="col-auto"><button class="btn btn-primary" id="submitButton" type="submit" input="nuevoUsuario">Next</button>                          
+                        <div class="col-auto"><button class="btn btn-primary"type="submit" input="newUsuario">Next</button>                          
                     </div>
+                    <div class="col-12">
+            <input type="hidden" name="id">
+            <input type="hidden" name="nuevo_Usuario">
+
+        </div>
                 </form>
             </div>
         </div>

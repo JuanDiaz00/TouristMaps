@@ -11,7 +11,7 @@ class Conexion
     {
        
         $conector = new mysqli("localhost", "root", "", "touristmaps");
-        if ($conector->connect_errno) {
+        if (mysqli_connect_errno()) {
             //echo $conector->connect_error;
         }
         return $conector;
